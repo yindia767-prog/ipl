@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import { Montserrat, Poppins } from "next/font/google";
+import "./globals.css";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+
+const poppins = Poppins({ 
+  subsets: ["latin"], 
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins" 
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
+export const metadata: Metadata = {
+  title: "TATA IPL 2026 Ticket Booking Platform",
+  description: "Secure and fast ticket booking for every match of the 19th season of TATA IPL.",
+  keywords: ["IPL 2026", "TATA IPL Tickets", "BCCI Ticketing", "IPL Schedule"],
+  authors: [{ name: "Official Ticketing Partner" }],
+  openGraph: {
+    title: "TATA IPL 2026 Ticket Booking",
+    description: "Book your seats for the 19th season of TATA IPL.",
+    type: "website",
+    locale: "en_IN",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${poppins.variable} ${montserrat.variable} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </head>
+      <body className="antialiased min-h-screen bg-slate-50 dark:bg-slate-950 font-sans" suppressHydrationWarning>
+        <header>
+          <Navbar />
+        </header>
+        <main className="flex-grow md:pt-20">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
