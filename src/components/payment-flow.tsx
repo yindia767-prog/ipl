@@ -389,7 +389,28 @@ export function PaymentFlow({ id, match, initialBooking, upiConfig }: PaymentFlo
 
               <div className="w-full h-px bg-slate-100 mb-10" />
 
-              <div className="w-full flex flex-col gap-4">
+              <div className="w-full flex flex-col gap-6">
+                <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 flex flex-col items-center text-center gap-4">
+                  <div className="flex items-center gap-6 opacity-30 grayscale saturate-0">
+                    <div className="flex flex-col items-center gap-1">
+                      <Lock className="w-4 h-4" />
+                      <span className="text-[7px] font-black uppercase tracking-widest">SSL Secure</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <ShieldCheck className="w-4 h-4" />
+                      <span className="text-[7px] font-black uppercase tracking-widest">PCI DSS</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <CheckCircle className="w-4 h-4" />
+                      <span className="text-[7px] font-black uppercase tracking-widest">Verified</span>
+                    </div>
+                  </div>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-relaxed">
+                    Payments are processed via encrypted UPI gateway. <br />
+                    <span className="text-[#f04e23]">Fan Guard Protection</span> active for this transaction.
+                  </p>
+                </div>
+
                 <button
                   onClick={() => setStep('verification')}
                   className="w-full h-16 bg-[#192356] hover:bg-slate-900 text-white font-black rounded-2xl flex items-center justify-center gap-4 transition-all uppercase tracking-widest text-[11px] shadow-xl shadow-blue-900/10"
@@ -401,14 +422,15 @@ export function PaymentFlow({ id, match, initialBooking, upiConfig }: PaymentFlo
             </div>
 
             {/* Security Banner */}
-            <div className="bg-emerald-50 border-2 border-emerald-100 rounded-3xl p-6 flex items-center gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-6 h-6 text-white" />
+            <div className="bg-[#192356] rounded-3xl p-8 flex items-center gap-6 shadow-xl shadow-blue-900/10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#f04e23] blur-[60px] opacity-10 -translate-y-1/2 translate-x-1/2" />
+                <div className="w-14 h-14 rounded-2xl bg-[#f04e23] flex items-center justify-center shrink-0 shadow-lg shadow-[#f04e23]/20">
+                  <Award className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h5 className="text-[10px] font-black uppercase text-emerald-800 tracking-widest mb-1">Encrypted Payment</h5>
-                  <p className="text-[10px] font-bold uppercase tracking-wide leading-relaxed text-emerald-600">
-                    Validated for {formData.name} • {formData.phone}
+                  <h5 className="text-[10px] font-black uppercase text-white tracking-widest mb-1">Fan Guard Coverage</h5>
+                  <p className="text-[10px] font-bold uppercase tracking-wide leading-relaxed text-white/40">
+                    100% Refundable if entry denied • Verified Match: {match.home_team} vs {match.away_team}
                   </p>
                 </div>
               </div>

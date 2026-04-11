@@ -145,15 +145,26 @@ export function CategorySelector({ matchId, categories = [] }: CategorySelectorP
                         )}>
                           {cat.name} {cat.id !== "general-admission" && `• ${BLOCKS[cat.name.length % BLOCKS.length]}`}
                         </h4>
-                        {!isSoldOut && (
-                          <div className={cn(
-                            "inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/10 text-blue-600 rounded-lg border border-blue-500/20",
-                            isSelected && "bg-white/10 text-white border-white/20"
-                          )}>
-                            <ShieldCheck className="w-3.5 h-3.5" />
-                            <span className="text-[9px] font-black uppercase tracking-widest">Verified Ticket</span>
-                          </div>
-                        )}
+                        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                          {!isSoldOut && (
+                            <div className={cn(
+                              "inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/10 text-blue-600 rounded-lg border border-blue-500/20",
+                              isSelected && "bg-white/10 text-white border-white/20"
+                            )}>
+                              <ShieldCheck className="w-3.5 h-3.5" />
+                              <span className="text-[9px] font-black uppercase tracking-widest">Verified Ticket</span>
+                            </div>
+                          )}
+                          {!isSoldOut && (
+                            <div className={cn(
+                              "inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest",
+                              isSelected ? "text-white/60" : "text-slate-400"
+                            )}>
+                              <Eye className="w-3.5 h-3.5" />
+                              {Math.floor(Math.random() * 8) + 3} People looking
+                            </div>
+                          )}
+                        </div>
                         {isSoldOut ? (
                           <span className="px-3 py-1 bg-slate-200 text-slate-500 text-[9px] uppercase tracking-widest rounded-lg font-black shrink-0">
                             Sold Out

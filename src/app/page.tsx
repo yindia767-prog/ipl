@@ -49,7 +49,7 @@ export default async function Home() {
       </section>
 
       {/* Trust Bar */}
-      <div className="bg-[#f04e23] py-4 overflow-hidden">
+      <div className="bg-[#f04e23] py-4 overflow-hidden border-b border-white/10">
         <div className="flex whitespace-nowrap animate-marquee items-center gap-12">
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex items-center gap-4 text-white text-[10px] font-black uppercase tracking-widest">
@@ -65,6 +65,54 @@ export default async function Home() {
           ))}
         </div>
       </div>
+
+      {/* Fan Guard & Stats Section */}
+      <section className="bg-slate-50 py-20 border-b border-slate-100">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Guarantee Box */}
+            <div className="bg-[#192356] rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden shadow-2xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#f04e23] blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2" />
+              
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-[#f04e23] rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-[#f04e23]/20">
+                  <ShieldCheck className="w-8 h-8 text-white" />
+                </div>
+                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6 leading-tight">
+                  THE FAN <br /><span className="text-[#f04e23]">GUARD</span> PROMISE
+                </h2>
+                <p className="text-white/60 font-medium text-sm md:text-base mb-10 leading-relaxed uppercase tracking-wide">
+                  Your entry is 100% guaranteed. If your tickets aren't valid for entry, we'll refund <span className="text-white font-black">100% of your money.</span> Period.
+                </p>
+                <div className="flex items-center gap-4 py-4 px-6 bg-white/5 border border-white/10 rounded-2xl">
+                  <div className="w-2 h-2 bg-[#f04e23] rounded-full animate-ping" />
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em]">Verified Seller Network</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-6 md:gap-10">
+              <div className="space-y-2">
+                <h3 className="text-4xl md:text-6xl font-black text-[#192356] tracking-tighter">15K+</h3>
+                <p className="text-[10px] md:text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">Tickets Delivered</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-4xl md:text-6xl font-black text-[#192356] tracking-tighter">4.8/5</h3>
+                <p className="text-[10px] md:text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">Customer Rating</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-4xl md:text-6xl font-black text-[#192356] tracking-tighter">100%</h3>
+                <p className="text-[10px] md:text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">Secure Checkout</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-4xl md:text-6xl font-black text-[#192356] tracking-tighter">24/7</h3>
+                <p className="text-[10px] md:text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">Expert Support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Main Schedule Section */}
       <section id="schedule" className="bg-white pt-2">

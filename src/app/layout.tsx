@@ -6,6 +6,7 @@ import Script from "next/script";
 import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/next";
 import { BookingNotification } from "@/components/booking-notification";
+import { HelpBubble } from "@/components/help-bubble";
 
 const poppins = Poppins({ 
   subsets: ["latin"], 
@@ -67,6 +68,7 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <BookingNotification />
+        <HelpBubble />
       </body>
     </html>
   );

@@ -9,6 +9,7 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start gap-2">
             <p>© 2026 TATA IPL 2026 TICKET MARKETPLACE. ALL RIGHTS RESERVED.</p>
             <p className="opacity-50">This is a secondary marketplace. We are not affiliated with the BCCI or IPL.</p>
+            <p className="opacity-30 mt-2">Reg. Office: HQ 12, Level 4, Bandra Kurla Complex, Mumbai, MH 400051</p>
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
