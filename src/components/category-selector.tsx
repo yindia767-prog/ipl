@@ -56,7 +56,7 @@ export function CategorySelector({ matchId, categories = [] }: CategorySelectorP
       name: "Upper Box A",
       sub_name: "High View North",
       price: 8500,
-      seats_available: 1,
+      seats_available: 0,
       total_seats: 100,
       features: ["Elevated Panoramic View", "Mobile Ticket Entry"]
     },
