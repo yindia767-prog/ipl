@@ -67,7 +67,7 @@ export default async function Home() {
       </div>
 
       {/* Main Schedule Section */}
-      <section id="schedule" className="bg-white pt-2">
+      <section id="schedule" className="bg-white pt-2 relative z-30">
         <div className="container mx-auto px-2 py-2">
           <MatchFilterList allMatches={searchableMatches} />
         </div>
