@@ -15,12 +15,12 @@ export function Navbar() {
                 className="object-contain"
               />
             </div>
-            <div className="flex flex-col">
+          <div className="flex flex-col">
               <span className="text-slate-900 text-sm md:text-xl font-black tracking-tighter leading-none uppercase">
                 TATA IPL <span className="text-[#f04e23]">2026</span>
               </span>
               <span className="text-[8px] md:text-[10px] text-[#f04e23] font-black uppercase tracking-[0.1em] md:tracking-[0.2em] leading-none mt-0.5 md:mt-1">
-                Official Tickets
+                TICKET MARKETPLACE
               </span>
             </div>
           </Link>
@@ -28,8 +28,8 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             <Link href="/#schedule" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-[#f04e23] transition-colors">Fixtures</Link>
-            <Link href="/" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-[#f04e23] transition-colors">Venues</Link>
-            <Link href="/" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-[#f04e23] transition-colors">Support</Link>
+            <Link href="/#schedule" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-[#f04e23] transition-colors">Venues</Link>
+            <Link href="/terms" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-[#f04e23] transition-colors">Support</Link>
           </nav>
         </div>
 

@@ -467,7 +467,7 @@ export function PaymentFlow({ id, match, initialBooking, upiConfig }: PaymentFlo
                 <div className="w-8 h-8 bg-slate-50 rounded-lg flex items-center justify-center border border-slate-100">
                   <Info className="w-4 h-4 text-slate-300" />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#192356]">Official Support Portal</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#192356]">Marketplace Support</span>
               </div>
             </div>
 

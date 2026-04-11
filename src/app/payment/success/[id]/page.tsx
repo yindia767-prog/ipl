@@ -87,7 +87,7 @@ export default async function ThankYouPage({ params }: PageProps) {
                       <MapPin className="w-6 h-6 text-[#f04e23]" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 block mb-1">Official Venue</span>
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 block mb-1">Match Venue</span>
                       <p className="text-lg font-black text-slate-900 leading-none">Refer to your booking details</p>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export default async function ThankYouPage({ params }: PageProps) {
       {/* Trust Badges */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-300 mb-12">Official Partners</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-300 mb-12">Verified Partners</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale">
             <div className="text-2xl font-black tracking-tighter uppercase text-slate-900">BCCI</div>
             <div className="text-2xl font-black tracking-tighter uppercase text-slate-900">TATA</div>

@@ -4,8 +4,8 @@ import { MatchFilterList } from "@/components/match-filter-list";
 import { ShieldCheck, Lock, Award } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Official Ticket Booking",
-  description: "Secure your seats for TATA IPL 2026. Official ticketing partner for all matches.",
+  title: "IPL 2026 Ticket Booking",
+  description: "Secure your seats for TATA IPL 2026. Premium ticket marketplace for all matches.",
 };
 
 export default async function Home() {

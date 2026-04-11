@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Official terms and conditions for IPL 2026 ticket bookings.",
+  description: "Terms and conditions for IPL 2026 ticket bookings through our marketplace.",
 };
 
 export default function TermsOfService() {
@@ -19,7 +19,7 @@ export default function TermsOfService() {
           <div className="container mx-auto px-4 relative z-10 text-center">
             <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">
               <Gavel className="w-4 h-4 text-[#f04e23]" />
-              Official Agreement
+              Platform Agreement
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-4">
               Terms of <span className="text-[#f04e23]">Service</span>
