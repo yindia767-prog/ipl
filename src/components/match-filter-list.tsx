@@ -54,7 +54,7 @@ export function MatchFilterList({ allMatches }: MatchFilterListProps) {
     });
 
     // If searching/filtering, show all matches. Otherwise respect showAll toggle.
-    return (showAll || isFiltering) ? filtered : filtered.slice(0, 6);
+    return (showAll || isFiltering) ? filtered : filtered.slice(0, 10);
   }, [search, teamFilter, venueFilter, showAll, allMatches, isFiltering]);
 
   const teamList = Object.values(TEAMS);
@@ -140,7 +140,7 @@ export function MatchFilterList({ allMatches }: MatchFilterListProps) {
       </div>
 
       {/* Load More Style Footer */}
-      {!showAll && !isFiltering && activeMatches.length === 6 && (
+      {!showAll && !isFiltering && activeMatches.length === 10 && (
         <div className="py-20 text-center container mx-auto px-4 bg-slate-50/30 border-t border-slate-100">
           <button 
             onClick={() => setShowAll(true)}
