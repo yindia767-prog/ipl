@@ -107,7 +107,7 @@ export function MatchFixtureRow({ match }: MatchFixtureRowProps) {
             </div>
 
             <div 
-              className="group/btn relative h-11 lg:h-14 px-8 bg-[#192356] group-hover:bg-[#f04e23] text-white rounded-lg lg:rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-blue-900/10 group-hover:shadow-[#f04e23]/30 overflow-hidden w-full lg:w_40 shrink-0"
+              className="group/btn relative h-11 lg:h-14 px-8 bg-[#192356] group-hover:bg-[#f04e23] text-white rounded-lg lg:rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-blue-900/10 group-hover:shadow-[#f04e23]/30 overflow-hidden w-full lg:w-40 shrink-0 active:scale-95"
             >
               <span className="relative z-10 text-[9px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
                 Book Tickets
