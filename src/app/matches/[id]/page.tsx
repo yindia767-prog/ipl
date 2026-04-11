@@ -49,11 +49,10 @@ export default async function MatchDetailsPage({ params }: PageProps) {
 
         {/* Category Selection */}
         <section className="py-12 border-t border-slate-100">
-          <div className="flex flex-col items-start mb-16">
+          <div className="flex flex-col items-start mb-4">
             <h2 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tight">Select Seats</h2>
-            <p className="text-sm font-bold text-slate-400 uppercase tracking-widest leading-loose">Choose your preferred stadium experience</p>
           </div>
-          <div className="bg-slate-50 p-6 md:p-12 rounded-[3rem] border border-slate-100">
+          <div className="bg-slate-50  md:p-12 rounded-[3rem] border border-slate-100">
             <CategorySelector matchId={id} categories={match.categories || []} />
           </div>
         </section>

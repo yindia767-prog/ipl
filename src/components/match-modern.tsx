@@ -18,7 +18,7 @@ interface MatchHeaderProps {
 }
 
 export function MatchHeader({ match }: MatchHeaderProps) {
-  const displayTitle = match.title || `TATA IPL 2026: Match ${String(match.match_no).padStart(2, '0')} | ${match.home_team} vs ${match.away_team}`;
+  const displayTitle = match.title || `${match.home_team} vs ${match.away_team}`;
   const homeBrand = getTeamBrand(match.home_team);
   const awayBrand = getTeamBrand(match.away_team);
   

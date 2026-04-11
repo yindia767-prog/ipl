@@ -47,7 +47,7 @@ export function CategorySelector({ matchId, categories = [] }: CategorySelectorP
       name: "Corporate Box",
       sub_name: "Grand Stand • Level 1",
       price: 25000,
-      seats_available: 1,
+      seats_available: 0,
       total_seats: 15,
       features: ["Reserved Padded Seats", "Match Day Snacks", "Exclusive Lobby Entry"]
     },
@@ -74,7 +74,7 @@ export function CategorySelector({ matchId, categories = [] }: CategorySelectorP
       name: "General Admission",
       sub_name: "North Tier 3",
       price: 1800,
-      seats_available: 0,
+      seats_available: 15,
       total_seats: 500,
       features: ["Standard Seating", "Access to Food Court"]
     }
