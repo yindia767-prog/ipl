@@ -2,6 +2,12 @@ import { MatchFilterList } from "@/components/match-filter-list";
 import { getMatches } from "@/lib/matches";
 import { Ticket, Zap, Trophy } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Official Ticket Booking",
+  description: "Secure your seats for TATA IPL 2026. Official ticketing partner for all matches.",
+};
 
 export default async function Home() {
   const searchableMatches = await getMatches();

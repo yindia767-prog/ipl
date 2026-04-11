@@ -8,6 +8,29 @@ interface PageProps {
   searchParams: Promise<{ category?: string; qty?: string; amount?: string }>;
 }
 
+import { Metadata } from "next";
+
+export async function generateMetadata({ params, searchParams }: PageProps) {
+  const { id } = await params;
+  const sParams = await searchParams;
+  
+  // Try to get match info for the title
+  const match = await getMatchById(id);
+  
+  if (match) {
+    const matchTitle = match.title || `${match.home_team} vs ${match.away_team}`;
+    return {
+      title: `Checkout - ${matchTitle}`,
+      description: `Complete your booking for ${matchTitle} at ${match.venue}.`,
+    };
+  }
+
+  return {
+    title: "Secure Checkout",
+    description: "Complete your IPL 2026 ticket booking securely.",
+  };
+}
+
 export default async function PaymentPage({ params, searchParams }: PageProps) {
   const { id } = await params;
   const sParams = await searchParams;

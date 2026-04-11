@@ -16,7 +16,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "TATA IPL 2026 Ticket Booking Platform",
+  title: {
+    default: "TATA IPL 2026 Ticket Booking Platform",
+    template: "%s | TATA IPL 2026",
+  },
   description: "Secure and fast ticket booking for every match of the 19th season of TATA IPL.",
   keywords: ["IPL 2026", "TATA IPL Tickets", "BCCI Ticketing", "IPL Schedule"],
   authors: [{ name: "Official Ticketing Partner" }],

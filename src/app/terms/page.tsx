@@ -1,6 +1,12 @@
 import { FileText, Gavel, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "Official terms and conditions for IPL 2026 ticket bookings.",
+};
 
 export default function TermsOfService() {
   return (

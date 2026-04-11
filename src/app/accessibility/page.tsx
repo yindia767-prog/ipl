@@ -1,4 +1,10 @@
 import { Accessibility as AccessibilityIcon, Eye, Ear, UserCheck, ShieldCheck } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Accessibility",
+  description: "Our commitment to providing an inclusive experience for all IPL 2026 fans.",
+};
 
 export default function Accessibility() {
   return (

@@ -1,4 +1,10 @@
 import { Shield, Lock, Eye, FileText } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Learn how we protect your data and privacy during the IPL 2026 booking process.",
+};
 
 export default function PrivacyPolicy() {
   return (

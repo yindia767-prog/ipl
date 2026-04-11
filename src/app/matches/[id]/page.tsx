@@ -11,6 +11,24 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
+export async function generateMetadata({ params }: PageProps) {
+  const { id } = await params;
+  const match = await getMatchById(id);
+
+  if (!match) {
+    return {
+      title: "Match Not Found",
+    };
+  }
+
+  const matchTitle = match.title || `${match.home_team} vs ${match.away_team}`;
+  
+  return {
+    title: matchTitle,
+    description: `Book tickets for ${matchTitle} at ${match.venue}. IPL 2026 Season 19.`,
+  };
+}
+
 export default async function MatchDetailsPage({ params }: PageProps) {
   const { id } = await params;
   const match = await getMatchById(id);
