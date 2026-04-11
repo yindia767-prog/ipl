@@ -86,15 +86,25 @@ export function BookingNotification() {
       setTimeout(() => setVisible(false), 4000);
     };
 
-    // Initial delay
-    const initialTimer = setTimeout(showNotification, 3000);
+    let timeoutId: NodeJS.Timeout;
 
-    // Dynamic interval (7 seconds)
-    const timer = setInterval(showNotification, 7000);
+    const scheduleNext = () => {
+      const delay = Math.floor(Math.random() * (60000 - 7000 + 1)) + 7000;
+      timeoutId = setTimeout(() => {
+        showNotification();
+        scheduleNext();
+      }, delay);
+    };
+
+    // Start the cycle after initial delay
+    const initialTimer = setTimeout(() => {
+      showNotification();
+      scheduleNext();
+    }, 5000);
 
     return () => {
       clearTimeout(initialTimer);
-      clearInterval(timer);
+      if (timeoutId) clearTimeout(timeoutId);
     };
   }, []);
 
