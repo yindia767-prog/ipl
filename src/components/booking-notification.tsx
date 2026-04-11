@@ -28,9 +28,9 @@ const INDIAN_NAMES = [
 ];
 
 const MATCHES = [
-  "CSK vs MI", "RCB vs KKR", "GT vs LSG", "RR vs SRH", "DC vs PBKS",
-  "MI vs RCB", "CSK vs GT", "LSG vs RR", "SRH vs KKR", "PBKS vs DC",
-  "Wankhede Stadium Special", "Eden Gardens Final", "Chinnaswamy Opener"
+  "CSK vs MI (May 14)", "RCB vs KKR (May 12)", "GT vs LSG (May 15)", "RR vs SRH (May 18)", 
+  "MI vs RCB (May 20)", "CSK vs GT (May 22)", "Playoffs Qualifier 1", "Eliminator Round",
+  "Qualifier 2", "Grand Final (June 1)"
 ];
 
 const PAYMENTS = ["Paytm", "Google Pay", "PhonePe"];

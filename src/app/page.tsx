@@ -9,7 +9,18 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const searchableMatches = await getMatches();
+  const allMatches = await getMatches();
+  
+  // Filter matches to show only those from tomorrow (+1 day) onwards
+  const now = new Date();
+  const tomorrow = new Date(now);
+  tomorrow.setDate(now.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0);
+
+  const searchableMatches = allMatches.filter(m => {
+    const matchDate = new Date(m.date);
+    return matchDate >= tomorrow;
+  });
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
