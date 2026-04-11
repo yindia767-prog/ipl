@@ -35,7 +35,10 @@ export function MatchFixtureRow({ match }: MatchFixtureRowProps) {
   const cleanTime = match.time.split(':').slice(0, 2).join(':');
 
   return (
-    <div className="group relative bg-white hover:bg-slate-50 border-b border-slate-100 transition-all duration-300">
+    <Link 
+      href={`/matches/${match.id}`}
+      className="group block relative bg-white hover:bg-slate-50 border-b border-slate-100 transition-all duration-300 cursor-pointer"
+    >
       <div className="container mx-auto px-4 py-4 lg:py-10">
         <div className="flex flex-col lg:grid lg:grid-cols-[140px_1fr_80px_1fr_220px] items-center gap-4 lg:gap-0">
           
@@ -101,18 +104,17 @@ export function MatchFixtureRow({ match }: MatchFixtureRowProps) {
               <span className="text-[10px] font-bold uppercase tracking-widest max-w-[150px] truncate">{match.venue}</span>
             </div>
 
-            <Link 
-              href={`/matches/${match.id}`}
-              className="group/btn relative h-11 lg:h-14 px-8 bg-[#192356] hover:bg-[#f04e23] text-white rounded-lg lg:rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-blue-900/10 hover:shadow-[#f04e23]/30 overflow-hidden w-full lg:w-40 shrink-0"
+            <div 
+              className="group/btn relative h-11 lg:h-14 px-8 bg-[#192356] group-hover:bg-[#f04e23] text-white rounded-lg lg:rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-blue-900/10 group-hover:shadow-[#f04e23]/30 overflow-hidden w-full lg:w-40 shrink-0"
             >
               <span className="relative z-10 text-[9px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
                 Book Tickets
                 <ChevronRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
               </span>
-            </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
