@@ -56,49 +56,7 @@ export function MatchFilterList({ allMatches }: MatchFilterListProps) {
 
   return (
     <div className="bg-white">
-      {/* Official Tabs Navigation (Simplified to Fixtures Only) */}
-      <div className="flex justify-center mb-12">
-        <div className="bg-slate-50 p-1.5 rounded-full flex items-center shadow-inner border border-slate-200/50">
-          <div className="px-12 py-3 bg-[#192356] text-white shadow-lg rounded-full text-[11px] font-black uppercase tracking-widest transition-all">
-            FIXTURES
-          </div>
-        </div>
-      </div>
-
-      {/* Official Filter Bar */}
-      <div className="container mx-auto px-4 mb-20 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 py-6 md:py-10 bg-slate-50/50 rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm">
-        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 md:gap-6 w-full">
-          {/* Team Dropdown */}
-          <div className="relative group w-full sm:w-64 md:w-64">
-            <select 
-              value={teamFilter || ""}
-              onChange={(e) => setTeamFilter(e.target.value || null)}
-              className="appearance-none w-full h-11 md:h-12 pl-6 pr-12 bg-white border border-slate-200 rounded-lg text-[10px] md:text-xs font-black tracking-widest text-slate-700 uppercase focus:ring-4 focus:ring-[#f04e23]/5 focus:border-[#f04e23] outline-none shadow-sm transition-all"
-            >
-              <option value="">ALL TEAMS</option>
-              {teamList.map((team) => (
-                <option key={team.id} value={team.name}>{team.name}</option>
-              ))}
-            </select>
-            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-hover:text-[#f04e23] transition-colors" />
-          </div>
-
-          {/* Venue Dropdown */}
-          <div className="relative group w-full sm:w-64 md:w-64">
-            <select 
-              value={venueFilter || ""}
-              onChange={(e) => setVenueFilter(e.target.value || null)}
-              className="appearance-none w-full h-11 md:h-12 pl-6 pr-12 bg-white border border-slate-200 rounded-lg text-[10px] md:text-xs font-black tracking-widest text-slate-700 uppercase focus:ring-4 focus:ring-[#f04e23]/5 focus:border-[#f04e23] outline-none shadow-sm transition-all"
-            >
-              <option value="">ALL VENUES</option>
-              {venues.map((v) => (
-                <option key={v} value={v}>{v}</option>
-              ))}
-            </select>
-            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-hover:text-[#f04e23] transition-colors" />
-          </div>
-        </div>
-      </div>
+  
 
       {/* Row Listings */}
       <div className="border-t border-slate-100">
