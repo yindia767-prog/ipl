@@ -348,15 +348,7 @@ export function PaymentFlow({ id, match, initialBooking, upiConfig }: PaymentFlo
               </div>
 
               <div className="w-full space-y-4 mb-10">
-                <div className="flex flex-col gap-4">
-                  <a
-                    href={upiConfig.upiUrl}
-                    className="w-full h-16 bg-[#f04e23] text-white font-black rounded-2xl flex items-center justify-center gap-4 transition-all hover:bg-slate-900 hover:scale-[1.02] active:scale-[0.98] uppercase tracking-[0.2em] text-xs shadow-xl shadow-[#f04e23]/20 relative z-10"
-                  >
-                    Pay via UPI App
-                    <Smartphone className="w-4 h-4" />
-                  </a>
-                </div>
+                
                 
                 {/* Manual UPI ID Display */}
                 <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex items-center justify-between gap-4 w-full relative z-10">
