@@ -16,7 +16,9 @@ import {
   Loader2,
   CheckCircle,
   Camera,
-  AlertCircle 
+  AlertCircle,
+  Lock,
+  Award 
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
