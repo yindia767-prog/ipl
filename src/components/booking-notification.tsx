@@ -45,33 +45,6 @@ export function BookingNotification() {
   });
 
   useEffect(() => {
-    const playSubtleSound = () => {
-      try {
-        const AudioContextClass = (window as any).AudioContext || (window as any).webkitAudioContext;
-        if (!AudioContextClass) return;
-        
-        const audioCtx = new AudioContextClass();
-        const oscillator = audioCtx.createOscillator();
-        const gainNode = audioCtx.createGain();
-
-        oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); 
-        oscillator.frequency.exponentialRampToValueAtTime(554.37, audioCtx.currentTime + 0.1); 
-
-        gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.03, audioCtx.currentTime + 0.05); // Very low volume
-        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.8); // Slow subtle decay
-
-        oscillator.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
-
-        oscillator.start();
-        oscillator.stop(audioCtx.currentTime + 0.8);
-      } catch (e) {
-        // Silently fail if blocked by browser
-      }
-    };
-
     const showNotification = () => {
       const name = INDIAN_NAMES[Math.floor(Math.random() * INDIAN_NAMES.length)];
       const match = MATCHES[Math.floor(Math.random() * MATCHES.length)];
@@ -80,7 +53,6 @@ export function BookingNotification() {
 
       setData({ name, match, payment, time });
       setVisible(true);
-      playSubtleSound();
 
       // Hide after 4 seconds
       setTimeout(() => setVisible(false), 4000);
@@ -89,18 +61,19 @@ export function BookingNotification() {
     let timeoutId: NodeJS.Timeout;
 
     const scheduleNext = () => {
-      const delay = Math.floor(Math.random() * (60000 - 7000 + 1)) + 7000;
+      // Delay between 30 seconds and 150 seconds (2.5 minutes)
+      const delay = Math.floor(Math.random() * (150000 - 30000 + 1)) + 30000;
       timeoutId = setTimeout(() => {
         showNotification();
         scheduleNext();
       }, delay);
     };
 
-    // Start the cycle after initial delay
+    // Start the first notification after 15 seconds
     const initialTimer = setTimeout(() => {
       showNotification();
       scheduleNext();
-    }, 5000);
+    }, 15000);
 
     return () => {
       clearTimeout(initialTimer);
