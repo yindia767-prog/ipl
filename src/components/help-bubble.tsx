@@ -27,11 +27,11 @@ export function HelpBubble() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end gap-4">
+    <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end gap-4 pointer-events-none">
       {/* FAQ Panel */}
       <div className={cn(
-        "bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-slate-100 transition-all duration-500 origin-bottom-right overflow-hidden w-[320px] md:w-[380px]",
-        isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"
+        "bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-slate-100 transition-all duration-500 origin-bottom-right overflow-hidden w-[320px] md:w-[380px] pointer-events-auto",
+        isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
       )}>
         <div className="bg-slate-900 p-8 text-white relative">
            <div className="absolute top-0 right-0 w-32 h-32 bg-[#f04e23] blur-[60px] opacity-20 -translate-y-1/2 translate-x-1/2" />
@@ -88,7 +88,7 @@ export function HelpBubble() {
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl transition-all active:scale-90 group relative overflow-hidden",
+          "w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl transition-all active:scale-90 group relative overflow-hidden pointer-events-auto",
           isOpen ? "bg-slate-900 text-white" : "bg-[#f04e23] text-white shadow-[#f04e23]/30"
         )}
       >
