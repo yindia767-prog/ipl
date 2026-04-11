@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CheckCircle2, ShoppingBag } from "lucide-react";
+import { CheckCircle2, ShoppingBag, Shield, Lock, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const INDIAN_NAMES = [
@@ -118,6 +118,21 @@ export function BookingNotification() {
             <p className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">
               via {data.payment} • {data.time} mins ago
             </p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-2 pt-2 border-t border-slate-100/50">
+             <div className="flex items-center gap-1 opacity-40">
+                <Shield className="w-2.5 h-2.5" />
+                <span className="text-[7px] font-black uppercase tracking-tighter">Secure</span>
+             </div>
+             <div className="flex items-center gap-1 opacity-40">
+                <Lock className="w-2.5 h-2.5" />
+                <span className="text-[7px] font-black uppercase tracking-tighter">Verified</span>
+             </div>
+             <div className="flex items-center gap-1 opacity-40">
+                <Award className="w-2.5 h-2.5" />
+                <span className="text-[7px] font-black uppercase tracking-tighter">Guaranteed</span>
+             </div>
           </div>
         </div>
       </div>
