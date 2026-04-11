@@ -18,15 +18,15 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "TATA IPL 2026 Ticket Booking Platform",
+    default: "TATA IPL 2026 Ticket Marketplace",
     template: "%s | TATA IPL 2026",
   },
-  description: "Secure and fast ticket booking for every match of the 19th season of TATA IPL.",
-  keywords: ["IPL 2026", "TATA IPL Tickets", "BCCI Ticketing", "IPL Schedule"],
-  authors: [{ name: "Official Ticketing Partner" }],
+  description: "Secure and fast ticket marketplace for the 19th season of TATA IPL.",
+  keywords: ["IPL 2026", "TATA IPL Tickets", "IPL Resale", "IPL Schedule", "Match Tickets"],
+  authors: [{ name: "Premium Ticket Marketplace" }],
   openGraph: {
-    title: "TATA IPL 2026 Ticket Booking",
-    description: "Book your seats for the 19th season of TATA IPL.",
+    title: "TATA IPL 2026 Ticket Marketplace",
+    description: "Secure your seats for the 19th season of TATA IPL through our premium marketplace.",
     type: "website",
     locale: "en_IN",
   },

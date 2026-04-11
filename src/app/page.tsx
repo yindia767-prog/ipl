@@ -26,13 +26,13 @@ export default async function Home() {
           </div>
           
           <h1 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-8">
-            SELECT YOUR <br />
-            <span className="text-[#f04e23]">MATCH</span>
+            PREMIUM <br />
+            <span className="text-[#f04e23]">RESALE</span>
           </h1>
           
           <p className="max-w-xl mx-auto text-slate-400 font-bold uppercase tracking-[0.2em] text-[11px] leading-relaxed">
-            Official Ticketing Platform for TATA IPL 2026. <br />
-            Safe, Verified & Instant Entry.
+            Leading Marketplace for TATA IPL 2026 Tickets. <br />
+            Guaranteed Delivery & Secure Entry.
           </p>
         </div>
       </section>
@@ -43,13 +43,13 @@ export default async function Home() {
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex items-center gap-4 text-white text-[10px] font-black uppercase tracking-widest">
               <Award className="w-4 h-4" />
-              Official Partner
+              Guaranteed Delivery
               <span className="opacity-30">•</span>
               <Lock className="w-4 h-4" />
               SSL Secured
               <span className="opacity-30">•</span>
               <ShieldCheck className="w-4 h-4" />
-              Verified Tickets
+              Verified Authenticity
             </div>
           ))}
         </div>
