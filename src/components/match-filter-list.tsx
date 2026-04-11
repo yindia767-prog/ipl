@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Search, Filter, Calendar, X, ChevronDown, ChevronUp, Share2 } from "lucide-react";
+import { Filter, Calendar, X, ChevronDown, ChevronUp, Share2 } from "lucide-react";
 import { MatchFixtureRow } from "./match-fixture-row";
 import { TEAMS } from "@/lib/team-utils";
 import { cn } from "@/lib/utils";
@@ -23,12 +23,11 @@ interface MatchFilterListProps {
 }
 
 export function MatchFilterList({ allMatches }: MatchFilterListProps) {
-  const [search, setSearch] = useState("");
   const [teamFilter, setTeamFilter] = useState<string | null>(null);
   const [venueFilter, setVenueFilter] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
 
-  const isFiltering = search.length > 0 || teamFilter !== null || venueFilter !== null;
+  const isFiltering = teamFilter !== null || venueFilter !== null;
 
   const activeMatches = useMemo(() => {
     // Precise local date string (YYYY-MM-DD) for timezone-accurate filtering
@@ -39,23 +38,18 @@ export function MatchFilterList({ allMatches }: MatchFilterListProps) {
     const baseList = allMatches.filter(match => match.date >= localDateStr);
 
     const filtered = baseList.filter((match) => {
-      const matchesSearch = 
-        match.home_team.toLowerCase().includes(search.toLowerCase()) ||
-        match.away_team.toLowerCase().includes(search.toLowerCase()) ||
-        match.venue.toLowerCase().includes(search.toLowerCase());
-      
       const matchesTeam = teamFilter 
         ? (match.home_team === teamFilter || match.away_team === teamFilter)
         : true;
       
       const matchesVenue = venueFilter ? match.venue === venueFilter : true;
       
-      return matchesSearch && matchesTeam && matchesVenue;
+      return matchesTeam && matchesVenue;
     });
 
     // If searching/filtering, show all matches. Otherwise respect showAll toggle.
     return (showAll || isFiltering) ? filtered : filtered.slice(0, 10);
-  }, [search, teamFilter, venueFilter, showAll, allMatches, isFiltering]);
+  }, [teamFilter, venueFilter, showAll, allMatches, isFiltering]);
 
   const teamList = Object.values(TEAMS);
   const venues = Array.from(new Set(allMatches.map(m => m.venue))).sort();
@@ -72,8 +66,8 @@ export function MatchFilterList({ allMatches }: MatchFilterListProps) {
       </div>
 
       {/* Official Filter Bar */}
-      <div className="container mx-auto px-4 mb-20 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 py-6 md:py-10 bg-slate-50/50 rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm">
-        <div className="flex flex-col sm:flex-row flex-wrap items-center gap-4 md:gap-6 w-full md:w-auto">
+      <div className="container mx-auto px-4 mb-20 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 py-6 md:py-10 bg-slate-50/50 rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm">
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 md:gap-6 w-full">
           {/* Team Dropdown */}
           <div className="relative group w-full sm:w-64 md:w-64">
             <select 
@@ -102,20 +96,6 @@ export function MatchFilterList({ allMatches }: MatchFilterListProps) {
               ))}
             </select>
             <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-hover:text-[#f04e23] transition-colors" />
-          </div>
-        </div>
-
-        {/* Official Search */}
-        <div className="flex items-center gap-6 w-full md:w-auto">
-          <div className="relative group w-full md:w-auto">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-[#f04e23] transition-colors" />
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full md:w-64 h-11 md:h-12 pl-12 pr-6 bg-white border border-slate-200 rounded-lg text-[10px] md:text-xs font-black tracking-widest text-slate-700 uppercase focus:ring-4 focus:ring-[#f04e23]/5 focus:border-[#f04e23] outline-none shadow-sm transition-all shadow-sm"
-            />
           </div>
         </div>
       </div>
