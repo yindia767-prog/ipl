@@ -14,8 +14,11 @@ import {
   TrendingUp,
   Award,
   Heart,
-  Users
+  Users,
+  ShieldCheck
 } from "lucide-react";
+
+const BLOCKS = ["Lower A-G", "Upper Block C", "Stand K", "Premium Wing", "North Tier", "South Terrace", "Grand Stand J"];
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { type MatchCategory } from "@/lib/matches";
@@ -140,8 +143,17 @@ export function CategorySelector({ matchId, categories = [] }: CategorySelectorP
                           isSelected ? "text-white" : "text-slate-900",
                           isSoldOut && "text-slate-400"
                         )}>
-                          {cat.name}
+                          {cat.name} {cat.id !== "general-admission" && `• ${BLOCKS[cat.name.length % BLOCKS.length]}`}
                         </h4>
+                        {!isSoldOut && (
+                          <div className={cn(
+                            "inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/10 text-blue-600 rounded-lg border border-blue-500/20",
+                            isSelected && "bg-white/10 text-white border-white/20"
+                          )}>
+                            <ShieldCheck className="w-3.5 h-3.5" />
+                            <span className="text-[9px] font-black uppercase tracking-widest">Verified Ticket</span>
+                          </div>
+                        )}
                         {isSoldOut ? (
                           <span className="px-3 py-1 bg-slate-200 text-slate-500 text-[9px] uppercase tracking-widest rounded-lg font-black shrink-0">
                             Sold Out
