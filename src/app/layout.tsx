@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import Script from "next/script";
 import { Footer } from "@/components/footer";
-import { Analytics } from "@vercel/analytics/nex";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({ 
   subsets: ["latin"], 
