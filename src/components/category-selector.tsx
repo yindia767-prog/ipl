@@ -113,6 +113,9 @@ export function CategorySelector({ matchId, categories = [] }: CategorySelectorP
               key={cat.id}
               role="button"
               tabIndex={0}
+              onClick={() => {
+                if (!isSoldOut && qty === 0) updateQuantity(cat.id, 1, cat.seats_available);
+              }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   if (!isSoldOut && qty === 0) updateQuantity(cat.id, 1, cat.seats_available);
